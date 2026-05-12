@@ -1,6 +1,6 @@
 # Yin (銀) - Darker than Black Wiki
 
-![Yin]([https://images4.alphacoders.com/731/thumb-1920-731477.png]) *Note: Image placeholder for Yin*
+![Yin](https://images4.alphacoders.com/731/thumb-1920-731477.png)
 
 **Yin** (銀, *In*), real name **Kirsi**, is a supporting protagonist in the anime series *Darker than Black*. She is a member of Hei's team and an **"Observer"** (Doll), a medium created to support Contractors.
 
