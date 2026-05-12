@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="css/img/favicon.png">
+    <script src="js/script.js"></script>
+    <title>Yin Wiki</title>
+</head>
+
+<body class="index-2-body">
+    <!-- loader -->
+    <div id="loader">
+        <img src="css/img/yinbgremovedbright.png" alt="Loading..." />
+        <em style="display:block; font-size: 15px; font-family:cursive;">Loading...</em>
+        <small><b style="color:white;">It may take 5 minutes(max) because of big image sizes</b></small>
+    </div>
+
+    <!-- marquee  -->
+    <marquee behavior="" direction="">
+        <p>
+            Welcome | Click any part of the site to listen to Yin's Piano | Darker Than Black is so damn underrated!! :(
+        </p>
+    </marquee>
+
+    <!-- index2  -->
+    <div class="index2-container">
+        <div class="item top-bar">
+            <div class="pp-yin">
+                <img src="css/img/yin.gif" alt="">
+            </div>
+            <div class="wiki-logo">
+                <h1>
+                    Yin Wiki
+                </h1>
+                <p>From: Darker Than Black</p>
+            </div>
+            <div class="nav-bar">
+                <a class="menuLink" href="part-in-the-story.html">
+                    part in the story
+                </a>
+                <br>
+                <a class="menuLink" href="https://darkerthanblack.fandom.com/wiki/Yin#Appearances">
+                    appearance
+                </a>
+                <br>
+                <a class="menuLink" href="gallery.html">
+                    gallery
+                </a>
+                <br>
+                <a class="menuLink" href="contact.html">
+                    contact
+                </a>
+                <br>
+                <input class="toggle-trigger" type="checkbox" name="" id="toggle-trigger" hidden>
+                <label class="toggle-button" for="toggle-trigger">
+                    --->Menu<--- </label>
+                        <div class="nav-bar-res">
+                            <a href="part-in-the-story.html">
+                                part in the story
+                            </a>
+
+                            <a href="https://darkerthanblack.fandom.com/wiki/Yin#Appearances">
+                                appearance
+                            </a>
+
+                            <a href="gallery.html">
+                                gallery
+                            </a>
+                            <a href="contact.html">
+                                contact
+                            </a>
+                            <label for="toggle-trigger">
+                                [close][X]
+                            </label>
+                        </div>
+            </div>
+        </div>
+        <div class="item about-yin">
+            <h2>Yin</h2>
+            <p>
+                Yin (銀（イン） In, pinyin: Yín, lit. Silver) is a blind teenage Doll who supports Hei’s Syndicate team. She
+                later flees from the Syndicate with Hei and begins to evolve.
+            </p>
+        </div>
+        <div class="item music-container">
+            <div class="audio-title"><b>Yin's Piano</b></div>
+            <div class="audio-box">
+                <audio id="player" src="css/img/yin-piano.mp3" autoplay loop preload="auto" muted></audio>
+
+                <script>
+                    const audio = document.getElementById('player');
+                    window.addEventListener('click', () => {
+                        if (audio.muted) {
+                            audio.muted = false;   // unmute the audio
+                            audio.play();          // play in case autoplay was blocked
+                        }
+                    }, { once: true }); // only triggers once
+                </script>
+                <!-- Custom progress bar -->
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-filled" id="progressFilled"></div>
+                </div>
+                <!-- Buttons -->
+                <div class="controls">
+                    <button id="playBtn">▶</button>
+                    <button id="pauseBtn">⏸</button>
+                    <button onclick="player.volume = Math.min(player.volume + 0.1, 1)">V+</button>
+                    <button onclick="player.volume = Math.max(player.volume - 0.1, 0)">V-</button>
+                </div>
+                <script>
+                    const player = document.getElementById('player');
+                    const playBtn = document.getElementById('playBtn');
+                    const pauseBtn = document.getElementById('pauseBtn');
+                    const progressFilled = document.getElementById('progressFilled');
+                    const progressContainer = document.getElementById('progressContainer');
+
+                    // Play/pause buttons
+                    playBtn.addEventListener('click', () => player.play());
+                    pauseBtn.addEventListener('click', () => player.pause());
+
+                    // Update progress bar as audio plays
+                    player.addEventListener('timeupdate', () => {
+                        const percent = (player.currentTime / player.duration) * 100;
+                        progressFilled.style.width = percent + '%';
+                    });
+
+                    // Click on progress bar to seek
+                    progressContainer.addEventListener('click', (e) => {
+                        const width = progressContainer.clientWidth;
+                        const clickX = e.offsetX;
+                        const duration = player.duration;
+                        player.currentTime = (clickX / width) * duration;
+                    });
+                </script>
+            </div>
+            <div class="audio-pic">
+                <img src="css/img/yin-piano.gif" alt="">
+            </div>
+        </div>
+        <div class="item appearance-small">
+            <h2>Appearance</h2>
+            <div class="yin-young-img">
+                <img src="css/img/Yin_as_a_young_girl.PNG.webp" alt="">
+            </div>
+            <p>
+                Yin is a slender small young woman with long grey hair, which she keeps tied back with a purple ribbon.
+                She has purple irises. She wears a dark purple dress with black hem and a black top which covers her
+                neck, shoulders and arms. Her outfit is completed by black leggings and black shoes.
+            </p>
+        </div>
+        <div class="item background-yin">
+            <h2>Background</h2>
+            <p>
+                Her real name is Kirsi, which is a Finnish female given name. Kirsi from whom Yin was created, was born
+                December 21. She lived with her mother somewhere in Europe (presumably Finland), and learned to play the
+                piano under the guidance of a famous pianist, Eelis Kastinen. Despite her blindness, Kirsi senses a
+                romance developing between her teacher and her mother. Shortly after her father dies in a plane crash,
+                Kirsi walks in on her mother and Elis, holding hands. She runs from the house and onto the road, into
+                the path of an oncoming truck. Her mother sacrifices herself by pushing Kirsi out of the way. At some
+                point after the death of her mother, Kirsi disappears. Little, if anything, is known about her
+                transformation into the medium known as a "Doll."
+            </p>
+        </div>
+        <div class="item chat-box">
+            <iframe src="https://www5.cbox.ws/box/?boxid=958994&boxtag=2lkutJ" width="100%" height="100%"
+                allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0"
+                scrolling="auto">
+            </iframe>
+        </div>
+        <div class="item personality">
+            <h2>Personality</h2>
+            <p>
+                At first, Yin was portrayed a doll unable to show any emotion. Huang mentions that this is due to her
+                "program" which was minimal and didn't allow her to make her own decisions. However, during the course
+                of the series, Yin begins to display emotions and her own will, deciding to follow Hei and remain to be
+                his partner, and even observes and notices a change in his behavior, despite not being ordered to do so.
+                This has been made apparent when she called Hei from the void to come back to her and not leave her
+                alone. In the process, her observation specter evolved or upgraded, now having a human-like body shaped
+                with her silhouette and is capable of physical touch. She also seems to have feelings and affection for
+                Hei, as commented by Amber. Which is then confirmed in Gaiden.
+            </p>
+            <p>
+                Earlier in the story, Yin saw that Hei was helping a friend who had a doll and she just came to his
+                apartment on her own accord which shocked Hei. She then showed that she really cared for the other doll
+                as she urged Hei to assists in her silent pleas for help. Mao simply didn't understand this.
+            </p>
+        </div>
+        <div class="item abilities">
+            <h2>Abilities</h2>
+            <img src="css/img/yin-ability-img.jpg" alt="">
+            <p>
+                Remote Viewing: As a Doll, she possesses the innate ability to use observer spirits. Yin is able to send
+                her observer spirits via the medium of water. As long as she maintains physical contact with water, Yin
+                is able to track and eavesdrop on anyone near water.
+            </p>
+        </div>
+        <div class="index2-grid-btn item part-in-the-story-btn">
+            <a href="part-in-the-story.html" class="blinking-animation grid-btns">Part in the stories</a>
+        </div>
+        <div class="index2-grid-btn item appearance-big-btn">
+            <a href="https://darkerthanblack.fandom.com/wiki/Yin#Appearances"
+                class="blinking-animation grid-btns">Appearances</a>
+        </div>
+        <div class="index2-grid-btn item gallery-btn">
+            <a href="gallery.html" class="blinking-animation grid-btns">Yin Gallery</a>
+        </div>
+        <div class="item trivia">
+            <h2>Trivia</h2>
+            <p>Her real name is Kirsi, which can be derived from the Finnish word "kirsikka" meaning "cherry". It can
+                also be seen as a variation of the Finnish version of the name "Christina".</p>
+        </div>
+        <div class="item voting">
+            <form method="post" action="https://poll.pollcode.com/98413848">
+                <div
+                    style="background-color:#EEEEEE;padding:2px; height:158px; width:100%;font-family:Georgia;font-size:small;color:#FFFFFF;box-shadow: 0px 0px 5px #888;background:none;">
+                    <div style="padding:2px 0px 4px 2px;"><strong>Do you like Yin?</strong></div><input type="radio"
+                        name="answer" value="1" id="answer984138481" style="float:left;" /><label for="answer984138481"
+                        style="float:left;width:146px; background: none;">Yes</label>
+                    <div style="clear:both;height:2px;"></div><input type="radio" name="answer" value="2"
+                        id="answer984138482" style="float:left;" /><label for="answer984138482"
+                        style="float:left;width:146px; background: none;">No</label>
+                    <div style="clear:both;height:2px;"></div>
+                    <div align="center" style="padding:3px;"><input type="submit" value=" Vote "
+                            style="background: none;">&nbsp;<input type="submit" name="view" value=" View "
+                            style="background: none;"></div>
+                    <div align="right" style="font-size:10px">pollcode.com <a href="https://pollcode.com/">free
+                            polls</a></div>
+                </div>
+            </form>
+        </div>
+        <div class="item moon">
+            <!-- // Begin Current Moon Phase HTML (c) MoonConnection.com // -->
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td align="center"><a href="https://www.moonconnection.com" target="mc_moon_ph"><img
+                                src="https://www.moonmodule.com/cs/dm/hn.gif" width="212" height="136" border="0"
+                                alt="" /></a>
+                        <div style="position:relative;width:128px;">
+                            <div
+                                style="position:absolute;top:-20px;left:6px;background:#000000;width:116px;text-align:center;">
+                                <a href="https://www.moonconnection.com/moon_phases.phtml" target="mc_moon_ph">
+                                    <font color="#7F7F7F" size="1" face="arial,helvetica,sans-serif"><span
+                                            style="color:#7F7F7F;font-family:arial,helvetica,sans-serif;font-size:10px;">moon
+                                            phase info</span>
+                                </a></font>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table><!-- // end moon phase HTML // -->
+        </div>
+        <div class="item gifs-yin">
+            <img src="css/img/gif1.gif" alt="">
+            <img src="css/img/gif2.gif" alt="">
+            <img src="css/img/gif3.gif" alt="">
+            <img src="css/img/gif4.gif" alt="">
+            <img src="css/img/gif5.gif" alt="">
+            <img src="css/img/gif6.jpg" alt="">
+        </div>
+        <div class="item footer">
+            <small><small>all these contents are directly copied from Fandom Wiki. I do not own these
+                    informations. inspired by: <a href="https://velvetblue.neocities.org/" target="_blank">velvet
+                        blue</a></small></small>
+        </div>
+    </div>
+</body>
+<script>
+    const loader = document.getElementById("loader");
+
+    // Show loader after 0.7 seconds
+    setTimeout(() => {
+        loader.classList.add("show");
+    }, 350);
+
+    // Hide loader when the page fully loads
+    window.addEventListener("load", () => {
+        loader.classList.add("hide");
+        // Optional: remove from DOM after fade-out completes (0.5s)
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 500);
+    });
+</script>
+
+</script>
+
+</html>
